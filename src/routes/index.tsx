@@ -437,7 +437,7 @@ function Contact() {
 
 function Index() {
   return (
-    <main className="min-h-screen bg-background text-foreground">
+    <main className="min-h-screen bg-background text-foreground pb-20 md:pb-0">
       <Nav />
       <Hero />
       <Marquee />
@@ -446,6 +446,7 @@ function Index() {
       <Process />
       <About />
       <Contact />
+      <BottomNav />
     </main>
   );
 }
