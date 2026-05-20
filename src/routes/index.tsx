@@ -153,9 +153,7 @@ function BottomNav() {
   );
 }
 
-    </header>
-  );
-}
+
 
 function Hero() {
   return (
