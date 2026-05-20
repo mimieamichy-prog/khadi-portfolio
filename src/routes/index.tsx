@@ -391,10 +391,10 @@ function Contact() {
             freelance and full-time roles. Send a note — I reply within 48 hours.
           </p>
           <a
-            href="mailto:hello@khadijat.design"
-            className="mt-10 inline-flex items-center gap-3 border-b-2 border-foreground pb-2 font-display text-3xl transition hover:border-accent hover:text-accent md:text-5xl"
+            href="mailto:Khadijatmomoh20@gmail.com"
+            className="mt-10 inline-flex items-center gap-3 border-b-2 border-foreground pb-2 font-display text-2xl transition hover:border-accent hover:text-accent md:text-5xl break-all"
           >
-            hello@khadijat.design
+            Khadijatmomoh20@gmail.com
             <span>↗</span>
           </a>
         </div>
