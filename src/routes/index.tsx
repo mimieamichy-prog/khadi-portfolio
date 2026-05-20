@@ -122,30 +122,38 @@ function Nav() {
         >
           Work with me
         </a>
-        <button aria-label="Open menu" className="md:hidden" onClick={() => setOpen((v) => !v)}>
-          <div className="flex h-10 w-10 flex-col items-center justify-center gap-1.5">
-            <span className={`block h-px w-6 bg-foreground transition ${open ? "translate-y-[3px] rotate-45" : ""}`} />
-            <span className={`block h-px w-6 bg-foreground transition ${open ? "-translate-y-[3px] -rotate-45" : ""}`} />
-          </div>
-        </button>
       </div>
-      {open && (
-        <div className="border-t border-border bg-background md:hidden">
-          <nav className="flex flex-col px-6 py-4">
-            {items.map((i) => (
-              <a key={i.href} href={i.href} onClick={() => setOpen(false)} className="border-b border-border/60 py-4 text-sm uppercase tracking-[0.14em]">
-                {i.label}
-              </a>
-            ))}
-            <a href="#contact" onClick={() => setOpen(false)} className="mt-4 inline-flex justify-center rounded-full bg-foreground px-5 py-3 text-xs font-medium uppercase tracking-[0.18em] text-background">
-              Work with me
-            </a>
-          </nav>
-        </div>
-      )}
     </header>
   );
 }
+
+function BottomNav() {
+  const items = [
+    { label: "Home", href: "#top", icon: "M3 12 12 4l9 8M5 10v10h14V10" },
+    { label: "Work", href: "#work", icon: "M4 7h16M4 12h16M4 17h10" },
+    { label: "Services", href: "#services", icon: "M12 2 4 6v6c0 5 3.5 9 8 10 4.5-1 8-5 8-10V6l-8-4z" },
+    { label: "About", href: "#about", icon: "M12 12a4 4 0 1 0 0-8 4 4 0 0 0 0 8zM4 21c0-4 4-7 8-7s8 3 8 7" },
+    { label: "Contact", href: "#contact", icon: "M4 6h16v12H4zM4 6l8 7 8-7" },
+  ];
+  return (
+    <nav className="fixed inset-x-0 bottom-0 z-50 border-t border-border bg-background/95 backdrop-blur-md md:hidden">
+      <ul className="grid grid-cols-5">
+        {items.map((i) => (
+          <li key={i.href}>
+            <a href={i.href} className="flex flex-col items-center gap-1 py-2.5 text-[10px] uppercase tracking-[0.12em] text-muted-foreground transition active:text-accent">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" className="h-5 w-5">
+                <path d={i.icon} />
+              </svg>
+              {i.label}
+            </a>
+          </li>
+        ))}
+      </ul>
+    </nav>
+  );
+}
+
+
 
 function Hero() {
   return (
@@ -391,10 +399,10 @@ function Contact() {
             freelance and full-time roles. Send a note — I reply within 48 hours.
           </p>
           <a
-            href="mailto:hello@khadijat.design"
-            className="mt-10 inline-flex items-center gap-3 border-b-2 border-foreground pb-2 font-display text-3xl transition hover:border-accent hover:text-accent md:text-5xl"
+            href="mailto:Khadijatmomoh20@gmail.com"
+            className="mt-10 inline-flex items-center gap-3 border-b-2 border-foreground pb-2 font-display text-2xl transition hover:border-accent hover:text-accent md:text-5xl break-all"
           >
-            hello@khadijat.design
+            Khadijatmomoh20@gmail.com
             <span>↗</span>
           </a>
         </div>
@@ -429,7 +437,7 @@ function Contact() {
 
 function Index() {
   return (
-    <main className="min-h-screen bg-background text-foreground">
+    <main className="min-h-screen bg-background text-foreground pb-20 md:pb-0">
       <Nav />
       <Hero />
       <Marquee />
@@ -438,6 +446,7 @@ function Index() {
       <Process />
       <About />
       <Contact />
+      <BottomNav />
     </main>
   );
 }
